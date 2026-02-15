@@ -78,8 +78,8 @@ def top_k_top_p_filtering(logits, top_k=None, top_p=0.9):
 @torch.no_grad()
 def generate_multimodal(
   model, idx, audio_features, max_new_tokens, context_size,
-  use_cache=True, temperature=0.8, top_k=None, top_p=0.9,
-  repetition_penalty=1.5, # VITAL: Prevents the <||||> loop
+  use_cache=True, temperature=0.2, top_k=None, top_p=0.9,
+  repetition_penalty=1.1, 
   eos_id=50256
 ):
     """
@@ -185,7 +185,7 @@ def generate_multimodal_sample(model, tokenizer, device, question, audio_key, fe
             context_size=context_size,
             temperature=0.2,         # Adds variety
             top_p=0.9,               # Logical filtering
-            repetition_penalty=2.0,  # Force the model to speak English
+            repetition_penalty=1.1,  # Force the model to speak English
             eos_id=tiktoken_eos_id
         )
 

@@ -29,7 +29,7 @@ from huggingface_hub import hf_hub_download
 from src.models.layers import NormLayer, RMSNorm, FFN, SwiGLU_FFN
 from src.models.attention import GQA_SWA_Flash
 from src.textGeneration import text_to_token_ids, generate_multimodal
-from src.models.moe_atlas import HDynMoF
+from src.models.moe import HDynMoF
 from configs.base_config import BASE_CONFIG, model_configs
 from msclap import CLAP
 
